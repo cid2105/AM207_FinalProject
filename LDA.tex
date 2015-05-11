@@ -224,34 +224,34 @@
 
     
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}454}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
-          \PY{k+kn}{import} \PY{n+nn}{scipy} \PY{k+kn}{as} \PY{n+nn}{sp}
-          \PY{k+kn}{import} \PY{n+nn}{scipy.stats} \PY{k+kn}{as} \PY{n+nn}{stats}
-          \PY{k+kn}{import} \PY{n+nn}{codecs}
-          \PY{k+kn}{import} \PY{n+nn}{nltk}
-          \PY{k+kn}{import} \PY{n+nn}{lda}
-          \PY{k+kn}{import} \PY{n+nn}{sklearn}
-          \PY{k+kn}{import} \PY{n+nn}{string}
-          \PY{k+kn}{import} \PY{n+nn}{cPickle} \PY{k+kn}{as} \PY{n+nn}{pickle}
-          \PY{k+kn}{import} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{as} \PY{n+nn}{plt}
-          \PY{k+kn}{import} \PY{n+nn}{collections}\PY{o}{,} \PY{n+nn}{operator}
-          \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k+kn}{as} \PY{n+nn}{pd}
-          \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k+kn}{as} \PY{n+nn}{sns}
-          \PY{k+kn}{import} \PY{n+nn}{matplotlib.gridspec} \PY{k+kn}{as} \PY{n+nn}{gridspec}
-          \PY{k+kn}{import} \PY{n+nn}{numpy.matlib}
-          \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k+kn}{import} \PY{n}{animation}
-          \PY{k+kn}{from} \PY{n+nn}{scipy.special} \PY{k+kn}{import} \PY{n}{gammaln}
-          \PY{k+kn}{from} \PY{n+nn}{nltk.corpus} \PY{k+kn}{import} \PY{n}{stopwords}
-          \PY{k+kn}{from} \PY{n+nn}{nltk.stem.porter} \PY{k+kn}{import} \PY{o}{*}
-          \PY{k+kn}{from} \PY{n+nn}{collections} \PY{k+kn}{import} \PY{n}{Counter}\PY{p}{,} \PY{n}{defaultdict}
-          \PY{k+kn}{from} \PY{n+nn}{sklearn.preprocessing} \PY{k+kn}{import} \PY{n}{normalize}
-          \PY{k+kn}{from} \PY{n+nn}{sklearn.feature\PYZus{}extraction.text} \PY{k+kn}{import} \PY{n}{TfidfTransformer}\PY{p}{,} \PY{n}{CountVectorizer}
-          \PY{k+kn}{from} \PY{n+nn}{collections} \PY{k+kn}{import} \PY{n}{defaultdict}
-          \PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits.mplot3d.axes3d} \PY{k+kn}{import} \PY{n}{Axes3D}
-          \PY{k+kn}{from} \PY{n+nn}{matplotlib.ticker} \PY{k+kn}{import} \PY{n}{LinearLocator}\PY{p}{,} \PY{n}{FormatStrFormatter}
-          \PY{k+kn}{from} \PY{n+nn}{wordcloud} \PY{k+kn}{import} \PY{n}{WordCloud}
-          \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ggplot}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{bmh}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
-          \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
+        \PY{k+kn}{import} \PY{n+nn}{scipy} \PY{k+kn}{as} \PY{n+nn}{sp}
+        \PY{k+kn}{import} \PY{n+nn}{scipy.stats} \PY{k+kn}{as} \PY{n+nn}{stats}
+        \PY{k+kn}{import} \PY{n+nn}{codecs}
+        \PY{k+kn}{import} \PY{n+nn}{nltk}
+        \PY{k+kn}{import} \PY{n+nn}{lda}
+        \PY{k+kn}{import} \PY{n+nn}{sklearn}
+        \PY{k+kn}{import} \PY{n+nn}{string}
+        \PY{k+kn}{import} \PY{n+nn}{cPickle} \PY{k+kn}{as} \PY{n+nn}{pickle}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{import} \PY{n+nn}{collections}\PY{o}{,} \PY{n+nn}{operator}
+        \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k+kn}{as} \PY{n+nn}{pd}
+        \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k+kn}{as} \PY{n+nn}{sns}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib.gridspec} \PY{k+kn}{as} \PY{n+nn}{gridspec}
+        \PY{k+kn}{import} \PY{n+nn}{numpy.matlib}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k+kn}{import} \PY{n}{animation}
+        \PY{k+kn}{from} \PY{n+nn}{scipy.special} \PY{k+kn}{import} \PY{n}{gammaln}
+        \PY{k+kn}{from} \PY{n+nn}{nltk.corpus} \PY{k+kn}{import} \PY{n}{stopwords}
+        \PY{k+kn}{from} \PY{n+nn}{nltk.stem.porter} \PY{k+kn}{import} \PY{o}{*}
+        \PY{k+kn}{from} \PY{n+nn}{collections} \PY{k+kn}{import} \PY{n}{Counter}\PY{p}{,} \PY{n}{defaultdict}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn.preprocessing} \PY{k+kn}{import} \PY{n}{normalize}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn.feature\PYZus{}extraction.text} \PY{k+kn}{import} \PY{n}{TfidfTransformer}\PY{p}{,} \PY{n}{CountVectorizer}
+        \PY{k+kn}{from} \PY{n+nn}{collections} \PY{k+kn}{import} \PY{n}{defaultdict}
+        \PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits.mplot3d.axes3d} \PY{k+kn}{import} \PY{n}{Axes3D}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib.ticker} \PY{k+kn}{import} \PY{n}{LinearLocator}\PY{p}{,} \PY{n}{FormatStrFormatter}
+        \PY{k+kn}{from} \PY{n+nn}{wordcloud} \PY{k+kn}{import} \PY{n}{WordCloud}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ggplot}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{bmh}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+        \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
 \end{Verbatim}
 
     \section{AM 207 Final Project}\label{am-207-final-project}
@@ -289,7 +289,7 @@ correctly label 100\% of our test data with the correct title.
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{import} \PY{n+nn}{codecs}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{import} \PY{n+nn}{codecs}
         \PY{n}{books} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{beowulf.txt}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{divine\PYZus{}comedy.txt}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{dracula.txt}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{frankenstein.txt}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{huck\PYZus{}finn.txt}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{moby\PYZus{}dick.txt}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{sherlock\PYZus{}holmes.txt}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{tale\PYZus{}of\PYZus{}two\PYZus{}cities.txt}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{the\PYZus{}republic.txt}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{ulysses.txt}\PY{l+s}{\PYZdq{}}\PY{p}{]}
         \PY{n}{all\PYZus{}docs} \PY{o}{=} \PY{p}{[}\PY{p}{]}
         \PY{k}{for} \PY{n}{book} \PY{o+ow}{in} \PY{n}{books}\PY{p}{:}
@@ -362,13 +362,13 @@ correctly label 100\% of our test data with the correct title.
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}45}]:} \PY{n}{processed\PYZus{}docs} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{temp\PYZus{}data/processed\PYZus{}docs.npy}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{processed\PYZus{}docs} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{temp\PYZus{}data/processed\PYZus{}docs.npy}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
     \subsection{2.2 Build vocabulary}\label{build-vocabulary}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{vocab} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{hstack}\PY{p}{(}\PY{n}{processed\PYZus{}docs}\PY{o}{.}\PY{n}{flat}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{vocab} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{hstack}\PY{p}{(}\PY{n}{processed\PYZus{}docs}\PY{o}{.}\PY{n}{flat}\PY{p}{)}\PY{p}{)}
         \PY{n}{vocab\PYZus{}dict} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
         \PY{n}{inv\PYZus{}vocab\PYZus{}dict} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
         \PY{k}{for} \PY{n}{idx}\PY{p}{,} \PY{n}{w} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{vocab}\PY{p}{)}\PY{p}{:}
@@ -377,12 +377,12 @@ correctly label 100\% of our test data with the correct title.
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{vocab}\PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{choice}\PY{p}{(}\PY{n}{vocab}\PY{o}{.}\PY{n}{size}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{vocab}\PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{choice}\PY{p}{(}\PY{n}{vocab}\PY{o}{.}\PY{n}{size}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{]}
 \end{Verbatim}
 
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} array([u'required', u'ethiop', u'thundercloven', u'sheetshelm', u'unferth',
-               u'hushmoney', u'portray', u'running', u'harveys', u'moore'], 
+{\color{outcolor}Out[{\color{outcolor}6}]:} array([u'tarpeian', u'capstans', u'pairs', u'fetid', u'na',
+               u'tradespeople', u'urged', u'superstitious', u'thatlet', u'tugging'], 
               dtype='<U69')
 \end{Verbatim}
         
@@ -396,12 +396,12 @@ correctly label 100\% of our test data with the correct title.
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{docs\PYZus{}as\PYZus{}nums} \PY{o}{=} \PY{n+nb}{map}\PY{p}{(}\PY{k}{lambda} \PY{n}{doc}\PY{p}{:} \PY{p}{[}\PY{n}{vocab\PYZus{}dict}\PY{p}{[}\PY{n}{w}\PY{p}{]} \PY{k}{for} \PY{n}{w} \PY{o+ow}{in} \PY{n}{doc}\PY{p}{]}\PY{p}{,} \PY{n}{processed\PYZus{}docs}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{docs\PYZus{}as\PYZus{}nums} \PY{o}{=} \PY{n+nb}{map}\PY{p}{(}\PY{k}{lambda} \PY{n}{doc}\PY{p}{:} \PY{p}{[}\PY{n}{vocab\PYZus{}dict}\PY{p}{[}\PY{n}{w}\PY{p}{]} \PY{k}{for} \PY{n}{w} \PY{o+ow}{in} \PY{n}{doc}\PY{p}{]}\PY{p}{,} \PY{n}{processed\PYZus{}docs}\PY{p}{)}
         \PY{n}{docs\PYZus{}as\PYZus{}nums}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{10}\PY{p}{]}
 \end{Verbatim}
 
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} [39038, 22075, 15318, 4485, 15318, 53645, 1932, 1940, 10849, 1375]
+{\color{outcolor}Out[{\color{outcolor}7}]:} [39038, 22075, 15318, 4485, 15318, 53645, 1932, 1940, 10849, 1375]
 \end{Verbatim}
         
     \subsection{2.4 Remove Low Frequency Words and Words that Appear Across
@@ -416,7 +416,7 @@ Documents}\label{remove-low-frequency-words-and-words-that-appear-across-90-of-d
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{k}{def} \PY{n+nf}{freq\PYZus{}map}\PY{p}{(}\PY{n}{doc}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}11}]:} \PY{k}{def} \PY{n+nf}{freq\PYZus{}map}\PY{p}{(}\PY{n}{doc}\PY{p}{)}\PY{p}{:}
              \PY{n}{out} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{vocab}\PY{o}{.}\PY{n}{size}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{int32}\PY{p}{)}
              \PY{k}{for} \PY{n}{w} \PY{o+ow}{in} \PY{n}{doc}\PY{p}{:}
                  \PY{n}{out}\PY{p}{[}\PY{n}{w}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
@@ -440,7 +440,10 @@ Documents}\label{remove-low-frequency-words-and-words-that-appear-across-90-of-d
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}47}]:} \PY{n}{np}\PY{o}{.}\PY{n}{save}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{temp\PYZus{}data/docs\PYZus{}as\PYZus{}nums.npy}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{docs\PYZus{}as\PYZus{}nums}\PY{p}{)}\PY{p}{)}
-         \PY{n}{docs\PYZus{}as\PYZus{}nums} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{temp\PYZus{}data/docs\PYZus{}as\PYZus{}nums.npy}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{docs\PYZus{}as\PYZus{}nums} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{temp\PYZus{}data/docs\PYZus{}as\PYZus{}nums.npy}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
     \subsection{2.5 Build Training and Test
@@ -454,11 +457,11 @@ Set}\label{build-training-and-test-set}
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}48}]:} \PY{n}{test\PYZus{}docs}\PY{p}{,} \PY{n}{train\PYZus{}docs} \PY{o}{=} \PY{p}{[}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{p}{]}
-         \PY{k}{for} \PY{n}{doc} \PY{o+ow}{in} \PY{n}{docs\PYZus{}as\PYZus{}nums}\PY{p}{:}
-             \PY{n}{test\PYZus{}docs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{doc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{n+nb}{len}\PY{p}{(}\PY{n}{doc}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-             \PY{n}{train\PYZus{}docs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{doc}\PY{p}{[}\PY{n+nb}{len}\PY{p}{(}\PY{n}{doc}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-         \PY{n}{test\PYZus{}docs}\PY{p}{,} \PY{n}{train\PYZus{}docs} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{test\PYZus{}docs}\PY{p}{)}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{train\PYZus{}docs}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{test\PYZus{}docs}\PY{p}{,} \PY{n}{train\PYZus{}docs} \PY{o}{=} \PY{p}{[}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{p}{]}
+        \PY{k}{for} \PY{n}{doc} \PY{o+ow}{in} \PY{n}{docs\PYZus{}as\PYZus{}nums}\PY{p}{:}
+            \PY{n}{test\PYZus{}docs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{doc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{n+nb}{len}\PY{p}{(}\PY{n}{doc}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+            \PY{n}{train\PYZus{}docs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{doc}\PY{p}{[}\PY{n+nb}{len}\PY{p}{(}\PY{n}{doc}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+        \PY{n}{test\PYZus{}docs}\PY{p}{,} \PY{n}{train\PYZus{}docs} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{test\PYZus{}docs}\PY{p}{)}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{train\PYZus{}docs}\PY{p}{)}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
@@ -486,7 +489,7 @@ a vocabulary word is used in a document. The count matrix has dimensions
 function will take it as an input.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}50}]:} \PY{n}{train\PYZus{}count\PYZus{}mat} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n}{freq\PYZus{}map}\PY{p}{,} \PY{n}{train\PYZus{}docs}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{int32}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{train\PYZus{}count\PYZus{}mat} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n}{freq\PYZus{}map}\PY{p}{,} \PY{n}{train\PYZus{}docs}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{int32}\PY{p}{)}
          \PY{n}{test\PYZus{}count\PYZus{}mat} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n}{freq\PYZus{}map}\PY{p}{,} \PY{n}{test\PYZus{}docs}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{int32}\PY{p}{)}
 \end{Verbatim}
 
@@ -510,7 +513,7 @@ function will take it as an input.
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}53}]:} \PY{n}{train\PYZus{}count\PYZus{}mat} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{temp\PYZus{}data/train\PYZus{}count\PYZus{}mat.npy}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{train\PYZus{}count\PYZus{}mat} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{temp\PYZus{}data/train\PYZus{}count\PYZus{}mat.npy}\PY{l+s}{\PYZdq{}}\PY{p}{)}
          \PY{n}{test\PYZus{}count\PYZus{}mat} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{temp\PYZus{}data/test\PYZus{}count\PYZus{}mat.npy}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
@@ -552,7 +555,7 @@ the plate notation in Figure 1.
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}54}]:} \PY{k}{def} \PY{n+nf}{conditional\PYZus{}dist}\PY{p}{(}\PY{n}{alpha}\PY{p}{,} \PY{n}{beta}\PY{p}{,} \PY{n}{nwt}\PY{p}{,} \PY{n}{nd}\PY{p}{,} \PY{n}{nt}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{w}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}14}]:} \PY{k}{def} \PY{n+nf}{conditional\PYZus{}dist}\PY{p}{(}\PY{n}{alpha}\PY{p}{,} \PY{n}{beta}\PY{p}{,} \PY{n}{nwt}\PY{p}{,} \PY{n}{nd}\PY{p}{,} \PY{n}{nt}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{w}\PY{p}{)}\PY{p}{:}
              \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
          \PY{l+s+sd}{    Compute the conditional distribution}
          \PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
@@ -573,7 +576,7 @@ the plate notation in Figure 1.
  
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}55}]:} \PY{k}{def} \PY{n+nf}{log\PYZus{}likelihood}\PY{p}{(}\PY{n}{alpha}\PY{p}{,} \PY{n}{beta}\PY{p}{,} \PY{n}{nwt}\PY{p}{,} \PY{n}{ndt}\PY{p}{,} \PY{n}{n\PYZus{}topics}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}15}]:} \PY{k}{def} \PY{n+nf}{log\PYZus{}likelihood}\PY{p}{(}\PY{n}{alpha}\PY{p}{,} \PY{n}{beta}\PY{p}{,} \PY{n}{nwt}\PY{p}{,} \PY{n}{ndt}\PY{p}{,} \PY{n}{n\PYZus{}topics}\PY{p}{)}\PY{p}{:}
              \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
          \PY{l+s+sd}{    Compute the likelihood that the model generated the data.}
          \PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
@@ -608,7 +611,7 @@ the plate notation in Figure 1.
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}56}]:} \PY{k}{def} \PY{n+nf}{word\PYZus{}indices}\PY{p}{(}\PY{n}{arr}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}16}]:} \PY{k}{def} \PY{n+nf}{word\PYZus{}indices}\PY{p}{(}\PY{n}{arr}\PY{p}{)}\PY{p}{:}
              \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
          \PY{l+s+sd}{    Transform a row of the count matrix into a document by replicating the token by its frequency}
          \PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
@@ -627,7 +630,7 @@ the plate notation in Figure 1.
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}57}]:} \PY{n}{n\PYZus{}topics} \PY{o}{=} \PY{l+m+mi}{15}
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{n\PYZus{}topics} \PY{o}{=} \PY{l+m+mi}{15}
          \PY{n}{alpha} \PY{o}{=} \PY{o}{.}\PY{l+m+mi}{1} \PY{c}{\PYZsh{} prior weight of topic k in a document; few topics per document}
          \PY{n}{beta} \PY{o}{=} \PY{l+m+mf}{0.05} \PY{c}{\PYZsh{} prior weight of word w in a topic; few words per topic}
          \PY{n}{n\PYZus{}docs}\PY{p}{,} \PY{n}{W} \PY{o}{=} \PY{n}{train\PYZus{}count\PYZus{}mat}\PY{o}{.}\PY{n}{shape}
@@ -663,7 +666,7 @@ the plate notation in Figure 1.
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}58}]:} \PY{c}{\PYZsh{} for each iteration}
+{\color{incolor}In [{\color{incolor}18}]:} \PY{c}{\PYZsh{} for each iteration}
          \PY{k}{for} \PY{n}{it} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n}{iters}\PY{p}{)}\PY{p}{:}
              \PY{n}{delta\PYZus{}topics\PYZus{}iteration} \PY{o}{=} \PY{l+m+mi}{0}
              \PY{c}{\PYZsh{} for each doc}
@@ -705,176 +708,176 @@ the plate notation in Figure 1.
  Iteration 1 
 -------------------------------------------------- 
 
-Likelihood -1509346.52104
-Delta topics 111125 
+Likelihood -1509564.20778
+Delta topics 111185 
 
 -------------------------------------------------- 
  Iteration 2 
 -------------------------------------------------- 
 
-Likelihood -1461240.90892
-Delta topics 92657 
+Likelihood -1460465.93552
+Delta topics 92721 
 
 -------------------------------------------------- 
  Iteration 3 
 -------------------------------------------------- 
 
-Likelihood -1431243.70243
-Delta topics 83071 
+Likelihood -1429010.49736
+Delta topics 82885 
 
 -------------------------------------------------- 
  Iteration 4 
 -------------------------------------------------- 
 
-Likelihood -1403205.95332
-Delta topics 75952 
+Likelihood -1399769.43548
+Delta topics 75405 
 
 -------------------------------------------------- 
  Iteration 5 
 -------------------------------------------------- 
 
-Likelihood -1375892.45689
-Delta topics 69177 
+Likelihood -1374871.8865
+Delta topics 68348 
 
 -------------------------------------------------- 
  Iteration 6 
 -------------------------------------------------- 
 
-Likelihood -1352426.21036
-Delta topics 62897 
+Likelihood -1354150.78614
+Delta topics 62542 
 
 -------------------------------------------------- 
  Iteration 7 
 -------------------------------------------------- 
 
-Likelihood -1333683.48167
-Delta topics 57406 
+Likelihood -1336644.63968
+Delta topics 57418 
 
 -------------------------------------------------- 
  Iteration 8 
 -------------------------------------------------- 
 
-Likelihood -1318235.17813
-Delta topics 52978 
+Likelihood -1322776.15127
+Delta topics 53710 
 
 -------------------------------------------------- 
  Iteration 9 
 -------------------------------------------------- 
 
-Likelihood -1307237.20132
-Delta topics 49550 
+Likelihood -1312190.89999
+Delta topics 50808 
 
 -------------------------------------------------- 
  Iteration 10 
 -------------------------------------------------- 
 
-Likelihood -1297412.91813
-Delta topics 47382 
+Likelihood -1302767.39681
+Delta topics 47879 
 
 -------------------------------------------------- 
  Iteration 11 
 -------------------------------------------------- 
 
-Likelihood -1290103.32715
-Delta topics 45165 
+Likelihood -1295224.87184
+Delta topics 46221 
 
 -------------------------------------------------- 
  Iteration 12 
 -------------------------------------------------- 
 
-Likelihood -1284317.27549
-Delta topics 43606 
+Likelihood -1290369.05947
+Delta topics 44605 
 
 -------------------------------------------------- 
  Iteration 13 
 -------------------------------------------------- 
 
-Likelihood -1279485.59909
-Delta topics 42267 
+Likelihood -1285797.8575
+Delta topics 43785 
 
 -------------------------------------------------- 
  Iteration 14 
 -------------------------------------------------- 
 
-Likelihood -1275789.80175
-Delta topics 41323 
+Likelihood -1282721.62032
+Delta topics 43039 
 
 -------------------------------------------------- 
  Iteration 15 
 -------------------------------------------------- 
 
-Likelihood -1271979.01508
-Delta topics 40635 
+Likelihood -1278667.0523
+Delta topics 42009 
 
 -------------------------------------------------- 
  Iteration 16 
 -------------------------------------------------- 
 
-Likelihood -1269073.96222
-Delta topics 39917 
+Likelihood -1275429.60741
+Delta topics 40992 
 
 -------------------------------------------------- 
  Iteration 17 
 -------------------------------------------------- 
 
-Likelihood -1266772.80354
-Delta topics 39140 
+Likelihood -1273389.60434
+Delta topics 40604 
 
 -------------------------------------------------- 
  Iteration 18 
 -------------------------------------------------- 
 
-Likelihood -1264857.20525
-Delta topics 38478 
+Likelihood -1270359.51444
+Delta topics 40144 
 
 -------------------------------------------------- 
  Iteration 19 
 -------------------------------------------------- 
 
-Likelihood -1263315.6469
-Delta topics 38290 
+Likelihood -1268859.81599
+Delta topics 39459 
 
 -------------------------------------------------- 
  Iteration 20 
 -------------------------------------------------- 
 
-Likelihood -1261075.70762
-Delta topics 38180 
+Likelihood -1266553.22391
+Delta topics 39338 
 
 -------------------------------------------------- 
  Iteration 21 
 -------------------------------------------------- 
 
-Likelihood -1259446.66802
-Delta topics 37530 
+Likelihood -1264753.92816
+Delta topics 38710 
 
 -------------------------------------------------- 
  Iteration 22 
 -------------------------------------------------- 
 
-Likelihood -1257919.33876
-Delta topics 37167 
+Likelihood -1262537.89211
+Delta topics 38319 
 
 -------------------------------------------------- 
  Iteration 23 
 -------------------------------------------------- 
 
-Likelihood -1256020.67474
-Delta topics 36837 
+Likelihood -1260408.32057
+Delta topics 37928 
 
 -------------------------------------------------- 
  Iteration 24 
 -------------------------------------------------- 
 
-Likelihood -1255487.62725
-Delta topics 36557 
+Likelihood -1258189.39382
+Delta topics 37435 
 
 -------------------------------------------------- 
  Iteration 25 
 -------------------------------------------------- 
 
-Likelihood -1254576.01859
-Delta topics 36666
+Likelihood -1256894.63423
+Delta topics 36876
     \end{Verbatim}
 
     \section{4. Analysis}\label{analysis}
@@ -887,18 +890,18 @@ plateau, such that we are seeing diminishing gains in our log
 likelihood. As the graph below illustrates, this is exactly the case.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}462}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ggplot}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}\PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{bmh}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
-          
-          \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{14}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
-          \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{25}\PY{p}{)}\PY{p}{,} \PY{n}{likelihoods}\PY{p}{)}
-          \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Log Likelihood vs Iterations}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{xx\PYZhy{}large}\PY{l+s}{\PYZdq{}}\PY{p}{)}
-          \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Iteration}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{xx\PYZhy{}large}\PY{l+s}{\PYZdq{}}\PY{p}{)}
-          \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Log Likelihood}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{xx\PYZhy{}large}\PY{l+s}{\PYZdq{}}\PY{p}{)}
-          \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ggplot}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}\PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{bmh}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+         
+         \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{14}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{25}\PY{p}{)}\PY{p}{,} \PY{n}{likelihoods}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Log Likelihood vs Iterations}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{xx\PYZhy{}large}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Iteration}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{xx\PYZhy{}large}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Log Likelihood}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{xx\PYZhy{}large}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_43_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_44_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -920,7 +923,7 @@ out. The graph below illustrates this trend.
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_45_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_46_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -946,7 +949,7 @@ should plateau. Each of the ten documents below illustrate this trend
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_47_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_48_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -954,16 +957,16 @@ should plateau. Each of the ten documents below illustrate this trend
 Swaps}\label{autocorrelation-of-swaps}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}62}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{acorr}\PY{p}{(}\PY{n}{delta\PYZus{}topics}\PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{delta\PYZus{}topics}\PY{p}{)}\PY{p}{,}  \PY{n}{normed}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} \PY{n}{usevlines}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{,} \PY{n}{maxlags}\PY{o}{=}\PY{n}{iters}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s}{u\PYZsq{}}\PY{l+s}{Shuffled}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{iters}\PY{p}{]}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}29}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{acorr}\PY{p}{(}\PY{n}{delta\PYZus{}topics}\PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{delta\PYZus{}topics}\PY{p}{)}\PY{p}{,} \PY{n}{ls}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZhy{}}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{normed}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} \PY{n}{usevlines}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{,} \PY{n}{maxlags}\PY{o}{=}\PY{n}{iters}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s}{u\PYZsq{}}\PY{l+s}{Shuffled}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{iters}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Autocorrelation of Swaps}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Lags}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Autocorrelation}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
-            \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}62}]:} (0, 25)
-\end{Verbatim}
-        
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_49_1.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_50_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1066,7 +1069,7 @@ danger 0.0048137094445
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_55_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_56_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1089,7 +1092,7 @@ danger 0.0048137094445
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_57_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_58_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1174,7 +1177,7 @@ Topics}\label{documents-as-a-distribution-over-topics}
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_62_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_63_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1185,7 +1188,7 @@ Topics}\label{documents-as-a-distribution-over-topics}
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_63_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_64_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1226,7 +1229,7 @@ Documents}\label{topic-landscape-of-documents}
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_65_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_66_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1261,7 +1264,7 @@ Documents}\label{one-dimensional-histogram-of-topics-over-documents}
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_68_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_69_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1283,7 +1286,7 @@ Individually}\label{histogram-of-topics-over-documents-individually}
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_70_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_71_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1474,7 +1477,7 @@ Individually}\label{histogram-of-topics-over-documents-individually}
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_79_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_80_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1542,7 +1545,7 @@ predictions?}\label{how-much-training-data-do-we-need-to-make-accurate-predictio
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_82_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LDA_files/LDA_83_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
