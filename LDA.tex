@@ -224,7 +224,7 @@
 
     
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}117}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}454}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
           \PY{k+kn}{import} \PY{n+nn}{scipy} \PY{k+kn}{as} \PY{n+nn}{sp}
           \PY{k+kn}{import} \PY{n+nn}{scipy.stats} \PY{k+kn}{as} \PY{n+nn}{stats}
           \PY{k+kn}{import} \PY{n+nn}{codecs}
@@ -238,6 +238,7 @@
           \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k+kn}{as} \PY{n+nn}{pd}
           \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k+kn}{as} \PY{n+nn}{sns}
           \PY{k+kn}{import} \PY{n+nn}{matplotlib.gridspec} \PY{k+kn}{as} \PY{n+nn}{gridspec}
+          \PY{k+kn}{import} \PY{n+nn}{numpy.matlib}
           \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k+kn}{import} \PY{n}{animation}
           \PY{k+kn}{from} \PY{n+nn}{scipy.special} \PY{k+kn}{import} \PY{n}{gammaln}
           \PY{k+kn}{from} \PY{n+nn}{nltk.corpus} \PY{k+kn}{import} \PY{n}{stopwords}
@@ -886,7 +887,7 @@ plateau, such that we are seeing diminishing gains in our log
 likelihood. As the graph below illustrates, this is exactly the case.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}149}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ggplot}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}\PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{bmh}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+{\color{incolor}In [{\color{incolor}462}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ggplot}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}\PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{bmh}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
           
           \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{14}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
           \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{25}\PY{p}{)}\PY{p}{,} \PY{n}{likelihoods}\PY{p}{)}
@@ -1044,24 +1045,24 @@ danger 0.0048137094445
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}65}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{17}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
-         \PY{n}{gs} \PY{o}{=} \PY{n}{gridspec}\PY{o}{.}\PY{n}{GridSpec}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}
-         
-         \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{n}{gs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
-         \PY{n}{wc} \PY{o}{=} \PY{n}{WordCloud}\PY{p}{(}\PY{n}{font\PYZus{}path}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{Verdana.ttf}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{background\PYZus{}color}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{white}\PY{l+s}{\PYZdq{}}\PY{p}{)}
-         \PY{n}{wc}\PY{o}{.}\PY{n}{generate}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{p}{[} \PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}} \PY{o}{+} \PY{n}{word}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{*}\PY{n+nb}{int}\PY{p}{(}\PY{l+m+mi}{1000}\PY{o}{*}\PY{n}{word}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)} \PY{k}{for} \PY{n}{word} \PY{o+ow}{in} \PY{n}{topic\PYZus{}words}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{items}\PY{p}{(}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{wc}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{axis}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{off}\PY{l+s}{\PYZdq{}}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Word cloud for Topic 47}\PY{l+s}{\PYZdq{}}\PY{p}{)}
-         
-         \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{n}{gs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
-         \PY{n}{wc} \PY{o}{=} \PY{n}{WordCloud}\PY{p}{(}\PY{n}{font\PYZus{}path}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{Verdana.ttf}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{background\PYZus{}color}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{white}\PY{l+s}{\PYZdq{}}\PY{p}{)}
-         \PY{n}{wc}\PY{o}{.}\PY{n}{generate}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{p}{[} \PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}} \PY{o}{+} \PY{n}{word}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{*}\PY{n+nb}{int}\PY{p}{(}\PY{l+m+mi}{1000}\PY{o}{*}\PY{n}{word}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)} \PY{k}{for} \PY{n}{word} \PY{o+ow}{in} \PY{n}{topic\PYZus{}words}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{items}\PY{p}{(}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{wc}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{axis}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{off}\PY{l+s}{\PYZdq{}}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Word cloud for Topic 2}\PY{l+s}{\PYZdq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}416}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{17}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
+          \PY{n}{gs} \PY{o}{=} \PY{n}{gridspec}\PY{o}{.}\PY{n}{GridSpec}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}
+          
+          \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{n}{gs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+          \PY{n}{wc} \PY{o}{=} \PY{n}{WordCloud}\PY{p}{(}\PY{n}{font\PYZus{}path}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{Verdana.ttf}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{background\PYZus{}color}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{white}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          \PY{n}{wc}\PY{o}{.}\PY{n}{generate}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{p}{[} \PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}} \PY{o}{+} \PY{n}{word}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{*}\PY{n+nb}{int}\PY{p}{(}\PY{l+m+mi}{1000}\PY{o}{*}\PY{n}{word}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)} \PY{k}{for} \PY{n}{word} \PY{o+ow}{in} \PY{n}{topic\PYZus{}words}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{items}\PY{p}{(}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+          \PY{n}{ax}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{wc}\PY{p}{)}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{axis}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{off}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Word cloud for Topic 1}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          
+          \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{n}{gs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+          \PY{n}{wc} \PY{o}{=} \PY{n}{WordCloud}\PY{p}{(}\PY{n}{font\PYZus{}path}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{Verdana.ttf}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{background\PYZus{}color}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{white}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          \PY{n}{wc}\PY{o}{.}\PY{n}{generate}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{p}{[} \PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}} \PY{o}{+} \PY{n}{word}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{*}\PY{n+nb}{int}\PY{p}{(}\PY{l+m+mi}{1000}\PY{o}{*}\PY{n}{word}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)} \PY{k}{for} \PY{n}{word} \PY{o+ow}{in} \PY{n}{topic\PYZus{}words}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{items}\PY{p}{(}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{wc}\PY{p}{)}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{axis}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{off}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Word cloud for Topic 3}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          
+          \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
     \begin{center}
@@ -1105,70 +1106,71 @@ Topics}\label{documents-as-a-distribution-over-topics}
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}69}]:} \PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{,} \PY{n}{n\PYZus{}topics}\PY{p}{)}\PY{p}{)}
-         \PY{k}{for} \PY{n}{d} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{:} 
-             \PY{c}{\PYZsh{} for each word}
-             \PY{k}{for} \PY{n}{i}\PY{p}{,} \PY{n}{w} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{word\PYZus{}indices}\PY{p}{(}\PY{n}{train\PYZus{}count\PYZus{}mat}\PY{p}{[}\PY{n}{d}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{:}
-                 \PY{c}{\PYZsh{} get topic of mth document, ith word}
-                 \PY{n}{z} \PY{o}{=} \PY{n}{topics}\PY{p}{[}\PY{n}{d}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]} 
-                 \PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{p}{[}\PY{n}{d}\PY{p}{,} \PY{n}{z}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
-         
-         \PY{c}{\PYZsh{} NORMALIZE TOPIC DISTRIBUTION}
-         \PY{n}{row\PYZus{}sums} \PY{o}{=} \PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
-         \PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist} \PY{o}{=} \PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist} \PY{o}{/} \PY{n}{row\PYZus{}sums}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{newaxis}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}417}]:} \PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{,} \PY{n}{n\PYZus{}topics}\PY{p}{)}\PY{p}{)}
+          \PY{k}{for} \PY{n}{d} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{:} 
+              \PY{c}{\PYZsh{} for each word}
+              \PY{k}{for} \PY{n}{i}\PY{p}{,} \PY{n}{w} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{word\PYZus{}indices}\PY{p}{(}\PY{n}{train\PYZus{}count\PYZus{}mat}\PY{p}{[}\PY{n}{d}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+                  \PY{c}{\PYZsh{} get topic of mth document, ith word}
+                  \PY{n}{z} \PY{o}{=} \PY{n}{topics}\PY{p}{[}\PY{n}{d}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]} 
+                  \PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{p}{[}\PY{n}{d}\PY{p}{,} \PY{n}{z}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+          
+          \PY{c}{\PYZsh{} NORMALIZE TOPIC DISTRIBUTION}
+          \PY{n}{row\PYZus{}sums} \PY{o}{=} \PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+          \PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist} \PY{o}{=} \PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist} \PY{o}{/} \PY{n}{row\PYZus{}sums}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{newaxis}\PY{p}{]}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}70}]:} \PY{n}{doc\PYZus{}topic\PYZus{}dist\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{p}{,} \PY{n}{columns}\PY{o}{=}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{Topic }\PY{l+s}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n\PYZus{}topics}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{index}\PY{o}{=}\PY{p}{(}\PY{p}{[}\PY{n}{books}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-         \PY{n}{doc\PYZus{}topic\PYZus{}dist\PYZus{}df}
+{\color{incolor}In [{\color{incolor}418}]:} \PY{n}{doc\PYZus{}topic\PYZus{}dist\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{p}{,} \PY{n}{columns}\PY{o}{=}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{Topic }\PY{l+s}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n\PYZus{}topics}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{index}\PY{o}{=}\PY{p}{(}\PY{p}{[}\PY{n}{books}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+          \PY{n}{doc\PYZus{}topic\PYZus{}dist\PYZus{}df}
 \end{Verbatim}
 
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}70}]:}                          Topic 0   Topic 1   Topic 2   Topic 3   Topic 4  \textbackslash{}
-         beowulf.txt             0.055384  0.007986  0.015714  0.000000  0.040443   
-         divine\_comedy.txt       0.557911  0.008299  0.002616  0.003969  0.000180   
-         dracula.txt             0.006229  0.012829  0.066654  0.001766  0.038208   
-         frankenstein.txt        0.025014  0.013293  0.110635  0.005432  0.200686   
-         huck\_finn.txt           0.000000  0.003541  0.002435  0.005976  0.000000   
-         moby\_dick.txt           0.059602  0.487327  0.027262  0.033142  0.024990   
-         sherlock\_holmes.txt     0.000000  0.002174  0.461957  0.028502  0.092633   
-         tale\_of\_two\_cities.txt  0.015789  0.008084  0.109511  0.510294  0.022862   
-         the\_republic.txt        0.006993  0.000181  0.124299  0.001266  0.046718   
-         ulysses.txt             0.024600  0.027245  0.048718  0.028413  0.024943   
-         
-                                  Topic 5   Topic 6   Topic 7   Topic 8   Topic 9  \textbackslash{}
-         beowulf.txt             0.000000  0.015456  0.000000  0.000000  0.000258   
-         divine\_comedy.txt       0.002977  0.084341  0.067743  0.010734  0.003157   
-         dracula.txt             0.063494  0.036627  0.043321  0.023520  0.639212   
-         frankenstein.txt        0.003288  0.429960  0.085620  0.001858  0.076329   
-         huck\_finn.txt           0.000553  0.000000  0.003984  0.002435  0.011510   
-         moby\_dick.txt           0.016304  0.018620  0.190432  0.022050  0.016972   
-         sherlock\_holmes.txt     0.069082  0.009420  0.061957  0.030918  0.142633   
-         tale\_of\_two\_cities.txt  0.019452  0.061261  0.049135  0.042440  0.098901   
-         the\_republic.txt        0.000000  0.251733  0.002050  0.000000  0.003135   
-         ulysses.txt             0.132309  0.033773  0.043634  0.118257  0.028620   
-         
-                                 Topic 10  Topic 11  Topic 12  Topic 13  Topic 14  
-         beowulf.txt             0.102009  0.756054  0.000000  0.002834  0.003864  
-         divine\_comedy.txt       0.023814  0.233899  0.000271  0.000090  0.000000  
-         dracula.txt             0.022218  0.003533  0.014037  0.001766  0.026587  
-         frankenstein.txt        0.030875  0.014723  0.001715  0.000572  0.000000  
-         huck\_finn.txt           0.000111  0.000000  0.000000  0.099712  0.869743  
-         moby\_dick.txt           0.031583  0.021204  0.021605  0.002539  0.026371  
-         sherlock\_holmes.txt     0.003140  0.000000  0.062923  0.000121  0.034541  
-         tale\_of\_two\_cities.txt  0.016294  0.005179  0.020968  0.000758  0.019073  
-         the\_republic.txt        0.553680  0.004280  0.004039  0.001386  0.000241  
-         ulysses.txt             0.047516  0.017316  0.318869  0.051673  0.054113  
+{\color{outcolor}Out[{\color{outcolor}418}]:}                          Topic 0   Topic 1   Topic 2   Topic 3   Topic 4  \textbackslash{}
+          beowulf.txt             0.043277  0.006698  0.014168  0.000000  0.037609   
+          divine\_comedy.txt       0.611672  0.006585  0.003518  0.003428  0.000090   
+          dracula.txt             0.007344  0.012736  0.072790  0.002231  0.036720   
+          frankenstein.txt        0.025014  0.010435  0.112779  0.004145  0.207261   
+          huck\_finn.txt           0.000000  0.002877  0.001992  0.005755  0.000000   
+          moby\_dick.txt           0.063299  0.462426  0.031093  0.031360  0.026905   
+          sherlock\_holmes.txt     0.000000  0.002899  0.474396  0.028140  0.082367   
+          tale\_of\_two\_cities.txt  0.013136  0.007200  0.123153  0.492611  0.027536   
+          the\_republic.txt        0.007595  0.000060  0.103382  0.001145  0.044728   
+          ulysses.txt             0.023397  0.028860  0.049234  0.025424  0.023363   
+          
+                                   Topic 5   Topic 6   Topic 7   Topic 8   Topic 9  \textbackslash{}
+          beowulf.txt             0.000000  0.012880  0.000000  0.000000  0.000515   
+          divine\_comedy.txt       0.002887  0.080281  0.061068  0.009020  0.003608   
+          dracula.txt             0.060426  0.035419  0.048805  0.023241  0.630008   
+          frankenstein.txt        0.002430  0.441109  0.076329  0.001858  0.070469   
+          huck\_finn.txt           0.000664  0.000000  0.003541  0.002877  0.013834   
+          moby\_dick.txt           0.015457  0.020892  0.196356  0.023253  0.018709   
+          sherlock\_holmes.txt     0.070652  0.012923  0.057729  0.026570  0.149758   
+          tale\_of\_two\_cities.txt  0.015157  0.069850  0.046609  0.041935  0.100796   
+          the\_republic.txt        0.000000  0.247694  0.001989  0.000000  0.003617   
+          ulysses.txt             0.132344  0.031883  0.045970  0.119151  0.030990   
+          
+                                  Topic 10  Topic 11  Topic 12  Topic 13  Topic 14  
+          beowulf.txt             0.094024  0.785935  0.000000  0.002061  0.002834  
+          divine\_comedy.txt       0.021469  0.196284  0.000090  0.000000  0.000000  
+          dracula.txt             0.016640  0.004090  0.015246  0.001301  0.033002  
+          frankenstein.txt        0.033591  0.013150  0.001429  0.000000  0.000000  
+          huck\_finn.txt           0.000111  0.000111  0.000000  0.113324  0.854914  
+          moby\_dick.txt           0.030603  0.024901  0.022184  0.002539  0.030024  
+          sherlock\_holmes.txt     0.004348  0.000000  0.062077  0.000121  0.028019  
+          tale\_of\_two\_cities.txt  0.017557  0.005179  0.021346  0.000884  0.017052  
+          the\_republic.txt        0.579963  0.005847  0.002954  0.000784  0.000241  
+          ulysses.txt             0.040198  0.016629  0.331684  0.044664  0.056208  
 \end{Verbatim}
         
     First, we can look at a heatmap of our topics over documents
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}71}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
-         \PY{n}{sns}\PY{o}{.}\PY{n}{heatmap}\PY{p}{(}\PY{n}{doc\PYZus{}topic\PYZus{}dist\PYZus{}df}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{gca}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{axes}\PY{o}{.}\PY{n}{get\PYZus{}xaxis}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{set\PYZus{}ticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Topics [0\PYZhy{}200]}\PY{l+s}{\PYZdq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}430}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
+          \PY{n}{sns}\PY{o}{.}\PY{n}{heatmap}\PY{p}{(}\PY{n}{doc\PYZus{}topic\PYZus{}dist\PYZus{}df}\PY{p}{)}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{gca}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{axes}\PY{o}{.}\PY{n}{get\PYZus{}xaxis}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{set\PYZus{}ticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n}{n\PYZus{}topics}\PY{p}{)}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{5}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{Topic }\PY{l+s}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n\PYZus{}topics}\PY{p}{)}\PY{p}{]}\PY{p}{,} \PY{n}{rotation}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{vertical}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Heatmap of Topic Mass Across Documents}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{xx\PYZhy{}large}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
     \begin{center}
@@ -1316,7 +1318,7 @@ Individually}\label{histogram-of-topics-over-documents-individually}
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}289}]:} \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dists} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}415}]:} \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dists} \PY{o}{=} \PY{p}{[}\PY{p}{]}
           \PY{n}{iters} \PY{o}{=} \PY{l+m+mi}{20}
           \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{iters}\PY{p}{)}\PY{p}{:}
               \PY{n}{n\PYZus{}docs}\PY{p}{,} \PY{n}{W} \PY{o}{=} \PY{n}{test\PYZus{}count\PYZus{}mat}\PY{o}{.}\PY{n}{shape}
@@ -1384,17 +1386,18 @@ Individually}\label{histogram-of-topics-over-documents-individually}
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}291}]:} \PY{n}{mins} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}481}]:} \PY{n}{maxs} \PY{o}{=} \PY{p}{[}\PY{p}{]}
           \PY{n}{topic\PYZus{}distribution\PYZus{}norms} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{iters}\PY{p}{,} \PY{n}{n\PYZus{}docs}\PY{p}{,} \PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{)}
           
           \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{iters}\PY{p}{)}\PY{p}{:}    
               \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{:}
                   \PY{n}{query\PYZus{}dist} \PY{o}{=} \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dists}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]}
                   \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{:}
-                      \PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{n}{k}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{p}{[}\PY{n}{j}\PY{p}{,} \PY{p}{:}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{query\PYZus{}dist}\PY{p}{)}
-              \PY{n}{mins}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{argmin}\PY{p}{(}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+                      \PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{n}{k}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{p}{[}\PY{n}{j}\PY{p}{,} \PY{p}{:}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{query\PYZus{}dist}\PY{p}{)} 
+                  \PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{n}{k}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{n}{k}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)} \PY{o}{/} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{n}{k}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)}
+              \PY{n}{maxs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{argmax}\PY{p}{(}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
           
-          \PY{n}{predictions} \PY{o}{=} \PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{int}\PY{p}{,} \PY{n}{stats}\PY{o}{.}\PY{n}{mode}\PY{p}{(}\PY{n}{mins}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+          \PY{n}{predictions} \PY{o}{=} \PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{int}\PY{p}{,} \PY{n}{stats}\PY{o}{.}\PY{n}{mode}\PY{p}{(}\PY{n}{maxs}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
           \PY{k}{print} \PY{n}{predictions}
 \end{Verbatim}
 
@@ -1410,11 +1413,11 @@ Individually}\label{histogram-of-topics-over-documents-individually}
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}292}]:} \PY{l+s}{\PYZdq{}}\PY{l+s}{Classification accuracy: }\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+si}{\PYZpc{}0.2f}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZpc{}}\PY{p}{(} \PY{l+m+mi}{100}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{books}\PY{p}{)}\PY{p}{[}\PY{n}{predictions}\PY{p}{]} \PY{o}{==} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{books}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}460}]:} \PY{l+s}{\PYZdq{}}\PY{l+s}{Classification accuracy: }\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+si}{\PYZpc{}0.2f}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZpc{}}\PY{p}{(} \PY{l+m+mi}{100}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{books}\PY{p}{)}\PY{p}{[}\PY{n}{predictions}\PY{p}{]} \PY{o}{==} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{books}\PY{p}{)}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
             \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}292}]:} 'Classification accuracy: \%100.00'
+{\color{outcolor}Out[{\color{outcolor}460}]:} 'Classification accuracy: \%100.00'
 \end{Verbatim}
         
     \begin{itemize}
@@ -1425,7 +1428,7 @@ Individually}\label{histogram-of-topics-over-documents-individually}
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}294}]:} \PY{c}{\PYZsh{}!/usr/bin/env python}
+{\color{incolor}In [{\color{incolor}488}]:} \PY{c}{\PYZsh{}!/usr/bin/env python}
           \PY{c}{\PYZsh{} a bar plot with errorbars}
           \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
           \PY{k+kn}{import} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{as} \PY{n+nn}{plt}
@@ -1448,18 +1451,18 @@ Individually}\label{histogram-of-topics-over-documents-individually}
               \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{n}{gs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
               
               \PY{c}{\PYZsh{} MEAN DISTRIBUTION ACROSS ITERATIONS AND BOOK\PYZhy{}TOPIC DICTIONARY FOR A TEST DOCUMENT TO BE ANY LABEL}
-              \PY{n}{mean} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
-              \PY{n}{std} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+              \PY{n}{mean} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+              \PY{n}{std} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
           
               \PY{n}{ax}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{ind}\PY{o}{+}\PY{n}{width}\PY{p}{,} \PY{n}{mean}\PY{p}{,} \PY{n}{width}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{n}{c}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{n}{books}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{yerr}\PY{o}{=}\PY{n}{std}\PY{p}{,} \PY{n}{error\PYZus{}kw}\PY{o}{=}\PY{p}{\PYZob{}} \PY{l+s}{\PYZsq{}}\PY{l+s}{ecolor}\PY{l+s}{\PYZsq{}}\PY{p}{:}\PY{l+s}{\PYZsq{}}\PY{l+s}{red}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{capthick}\PY{l+s}{\PYZsq{}}\PY{p}{:}\PY{l+m+mi}{1}\PY{p}{\PYZcb{}}\PY{p}{)}
               \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Scores}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-              \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+              \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{1.5}\PY{p}{]}\PY{p}{)}
               \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticks}\PY{p}{(}\PY{n}{ind}\PY{o}{+}\PY{n}{width}\PY{p}{)}
               \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(} \PY{p}{(}\PY{n}{books}\PY{p}{)} \PY{p}{)}
               
               \PY{n}{ax}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{local max}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
-                          \PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{n}{i}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{15}\PY{p}{,} \PY{o}{.}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}
-                          \PY{n}{xytext}\PY{o}{=}\PY{p}{(}\PY{n}{i}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{15}\PY{p}{,} \PY{o}{.}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{,}
+                          \PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{n}{i}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{15}\PY{p}{,} \PY{o}{.}\PY{l+m+mi}{9}\PY{p}{)}\PY{p}{,}
+                          \PY{n}{xytext}\PY{o}{=}\PY{p}{(}\PY{n}{i}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{15}\PY{p}{,} \PY{l+m+mf}{1.2}\PY{p}{)}\PY{p}{,}
                           \PY{n}{arrowprops}\PY{o}{=}\PY{n+nb}{dict}\PY{p}{(}\PY{n}{shrink}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{headwidth}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{5}\PY{p}{,} \PY{n}{fc}\PY{o}{=}\PY{n}{sns}\PY{o}{.}\PY{n}{color\PYZus{}palette}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{hls}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{,}
                           \PY{c}{\PYZsh{}textcoords = \PYZsq{}offset points\PYZsq{}, ha = \PYZsq{}right\PYZsq{}, va = \PYZsq{}bottom\PYZsq{},}
                           \PY{n}{bbox} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{n}{boxstyle} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{round,pad=0.3}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fc} \PY{o}{=} \PY{n}{sns}\PY{o}{.}\PY{n}{color\PYZus{}palette}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{hls}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{alpha} \PY{o}{=} \PY{l+m+mf}{0.3}\PY{p}{)}\PY{p}{,}
@@ -1491,43 +1494,46 @@ predictions?}\label{how-much-training-data-do-we-need-to-make-accurate-predictio
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}396}]:} \PY{n}{test\PYZus{}count\PYZus{}mats} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}498}]:} \PY{n}{test\PYZus{}count\PYZus{}mats} \PY{o}{=} \PY{p}{[}\PY{p}{]}
           \PY{n}{test\PYZus{}docs} \PY{o}{=} \PY{n}{doc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{n+nb}{len}\PY{p}{(}\PY{n}{doc}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{]}
           \PY{n}{accuracy} \PY{o}{=} \PY{p}{[}\PY{p}{]}\PY{p}{;} \PY{n}{err} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-          \PY{n}{word\PYZus{}counts} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{10000}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{)}
+          \PY{n}{word\PYZus{}counts} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{10000}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}
           \PY{k}{for} \PY{n}{num\PYZus{}words} \PY{o+ow}{in} \PY{n}{word\PYZus{}counts}\PY{p}{:}
-              \PY{n}{test\PYZus{}docs} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-              \PY{k}{for} \PY{n}{doc} \PY{o+ow}{in} \PY{n}{docs\PYZus{}as\PYZus{}nums}\PY{p}{:}
-                  \PY{n}{test\PYZus{}docs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{doc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{n+nb}{int}\PY{p}{(}\PY{n}{num\PYZus{}words}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-              \PY{n}{test\PYZus{}count\PYZus{}mat} \PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n}{freq\PYZus{}map}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{test\PYZus{}docs}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{int32}\PY{p}{)}
+              \PY{n}{acc} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+              \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
+                  \PY{n}{test\PYZus{}docs} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                  \PY{k}{for} \PY{n}{doc} \PY{o+ow}{in} \PY{n}{docs\PYZus{}as\PYZus{}nums}\PY{p}{:}
+                      \PY{n}{test\PYZus{}docs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{doc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{n+nb}{int}\PY{p}{(}\PY{n}{num\PYZus{}words}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                  \PY{n}{test\PYZus{}count\PYZus{}mat} \PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n}{freq\PYZus{}map}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{test\PYZus{}docs}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{int32}\PY{p}{)}
               
-              \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dist} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{,} \PY{n}{n\PYZus{}topics}\PY{p}{)}\PY{p}{)}
-              \PY{k}{for} \PY{n}{d} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{:} 
-                  \PY{c}{\PYZsh{} for each word}
-                  \PY{k}{for} \PY{n}{i}\PY{p}{,} \PY{n}{w} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{word\PYZus{}indices}\PY{p}{(}\PY{n}{test\PYZus{}count\PYZus{}mat}\PY{p}{[}\PY{n}{d}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{:}
-                      \PY{c}{\PYZsh{} get topic of mth document, ith word}
-                      \PY{n}{p\PYZus{}z} \PY{o}{=} \PY{n}{conditional\PYZus{}dist}\PY{p}{(}\PY{n}{alpha}\PY{p}{,} \PY{n}{beta}\PY{p}{,} \PY{n}{nwt}\PY{p}{,} \PY{n}{nd}\PY{p}{,} \PY{n}{nt}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{w}\PY{p}{)}
-                      \PY{n}{z} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{multinomial}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{p\PYZus{}z}\PY{p}{)}\PY{o}{.}\PY{n}{argmax}\PY{p}{(}\PY{p}{)}
-                      \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{p}{[}\PY{n}{d}\PY{p}{,} \PY{n}{z}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+                  \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dist} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{,} \PY{n}{n\PYZus{}topics}\PY{p}{)}\PY{p}{)}
+                  \PY{k}{for} \PY{n}{d} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{:} 
+                      \PY{c}{\PYZsh{} for each word}
+                      \PY{k}{for} \PY{n}{i}\PY{p}{,} \PY{n}{w} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{word\PYZus{}indices}\PY{p}{(}\PY{n}{test\PYZus{}count\PYZus{}mat}\PY{p}{[}\PY{n}{d}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+                          \PY{c}{\PYZsh{} get topic of mth document, ith word}
+                          \PY{n}{p\PYZus{}z} \PY{o}{=} \PY{n}{conditional\PYZus{}dist}\PY{p}{(}\PY{n}{alpha}\PY{p}{,} \PY{n}{beta}\PY{p}{,} \PY{n}{nwt}\PY{p}{,} \PY{n}{nd}\PY{p}{,} \PY{n}{nt}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{w}\PY{p}{)}
+                          \PY{n}{z} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{multinomial}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{p\PYZus{}z}\PY{p}{)}\PY{o}{.}\PY{n}{argmax}\PY{p}{(}\PY{p}{)}
+                          \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{p}{[}\PY{n}{d}\PY{p}{,} \PY{n}{z}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
           
-              \PY{c}{\PYZsh{} NORMALIZE TOPIC DISTRIBUTION}
-              \PY{n}{row\PYZus{}sums} \PY{o}{=} \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{+} \PY{l+m+mf}{0.000001}
-              \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dist} \PY{o}{=} \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dist} \PY{o}{/} \PY{n}{row\PYZus{}sums}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{newaxis}\PY{p}{]}
-              \PY{n}{topic\PYZus{}distribution\PYZus{}norms} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{,} \PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{)}
+                  \PY{c}{\PYZsh{} NORMALIZE TOPIC DISTRIBUTION}
+                  \PY{n}{row\PYZus{}sums} \PY{o}{=} \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{+} \PY{l+m+mf}{0.000001}
+                  \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dist} \PY{o}{=} \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dist} \PY{o}{/} \PY{n}{row\PYZus{}sums}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{newaxis}\PY{p}{]}
+                  \PY{n}{topic\PYZus{}distribution\PYZus{}norms} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{,} \PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{)}
           
-              \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{:}
-                  \PY{n}{query\PYZus{}dist} \PY{o}{=} \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]}
-                  \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{:}
-                      \PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{p}{[}\PY{n}{j}\PY{p}{,} \PY{p}{:}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{query\PYZus{}dist}\PY{p}{)}
-          
-              \PY{n}{acc} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(} \PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{o}{.}\PY{n}{diagonal}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{)}
-              \PY{n}{std} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(} \PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{o}{.}\PY{n}{diagonal}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{)}
-              \PY{n}{accuracy}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{acc}\PY{p}{)}
-              \PY{n}{err}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{std}\PY{p}{)}
+                  \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{:}
+                      \PY{n}{query\PYZus{}dist} \PY{o}{=} \PY{n}{test\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]}
+                      \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n}{n\PYZus{}docs}\PY{p}{)}\PY{p}{:}
+                          \PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n}{train\PYZus{}doc\PYZus{}topic\PYZus{}dist}\PY{p}{[}\PY{n}{j}\PY{p}{,} \PY{p}{:}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{query\PYZus{}dist}\PY{p}{)}
+                      \PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)} \PY{o}{/} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)}
+              
+                  \PY{n}{acc}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{topic\PYZus{}distribution\PYZus{}norms}\PY{o}{.}\PY{n}{diagonal}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{)}
+                  
+              \PY{n}{accuracy}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{acc}\PY{p}{)}\PY{p}{)}
+              \PY{n}{err}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{acc}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}397}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{17}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}499}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{17}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
           \PY{n}{plt}\PY{o}{.}\PY{n}{suptitle}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Prediction Confidence of True Label vs Number of Test Words}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{xx\PYZhy{}large}\PY{l+s}{\PYZdq{}}\PY{p}{)}
           \PY{n}{plt}\PY{o}{.}\PY{n}{errorbar}\PY{p}{(}\PY{n}{word\PYZus{}counts}\PY{p}{,} \PY{n}{accuracy}\PY{p}{,} \PY{n}{yerr}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{err}\PY{p}{)}\PY{p}{)}
           \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Number of Words in Test Set}\PY{l+s}{\PYZdq{}}\PY{p}{)}
@@ -1598,7 +1604,7 @@ Folks tom ram prettiest ole rope racket orphans runnin honest .
     \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  We train an LDA model on half the pages of ten classic books, the
+  We trained an LDA model on half the pages of ten classic books, the
   other half is used for testing
 \item
   Given the test data and our model, we perform inference on the new
@@ -1623,6 +1629,10 @@ Folks tom ram prettiest ole rope racket orphans runnin honest .
   Future work may use bigrams or n-grams to map to topics, instead of
   unigrams
 \end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} 
+\end{Verbatim}
 
 
     % Add a bibliography block to the postdoc
